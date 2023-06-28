@@ -1,14 +1,11 @@
 package org.example;
 
-import java.util.ArrayList;
-
 public class RentalAgreement implements Observable {
-    private String rentalId;
-    private Employee employee;
-    private Product rentable;
-    private int rentalDays;
+    private final Employee employee;
+    private final Product rentable;
+    private final int rentalDays;
 
-    private final ArrayList<Observer> observers = new ArrayList<>();
+    private Observer observer;
 
     public RentalAgreement(Product rentable, int days,Employee employee){
         this.rentable = rentable;
@@ -18,10 +15,12 @@ public class RentalAgreement implements Observable {
 
     public void startRental() {
         toggleStatus();
+        registerObserver(employee);
         notifyObservers();
     }
     public void endRental() {
         toggleStatus();
+        removeObserver(employee);
         notifyObservers();
     }
 
@@ -35,18 +34,17 @@ public class RentalAgreement implements Observable {
 
     // observer
     public void registerObserver(Observer o){
-        observers.add(o);
+        observer = o;
     }
     public void removeObserver(Observer o){
-        for(Observer obs : observers){
-            if (obs.equals(o)){
-                observers.remove(obs);
-            }
+        if (observer != null && observer.equals(o)) {
+            observer = null;
         }
-
     }
     public void notifyObservers(){
-        employee.update();
+        if (observer != null) {
+            observer.update();
+        }
     }
 
     public Product getRentable() {
