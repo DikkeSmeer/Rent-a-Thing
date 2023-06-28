@@ -4,7 +4,6 @@ public class RentalAgreement implements Observable {
     private final Employee employee;
     private final Product rentable;
     private final int rentalDays;
-
     private Observer observer;
 
     public RentalAgreement(Product rentable, int days,Employee employee){
