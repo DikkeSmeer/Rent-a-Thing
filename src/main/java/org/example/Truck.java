@@ -13,7 +13,7 @@ public class Truck extends Product {
     @Override
     public double berekenHuurPrijs() { return loadCapacity * getDailyRentalPrice(); }
     @Override
-    public double berekenVerzekeringPrijs() { return engineCapacity * getInsuranceFee(); }
+    public double berekenVerzekeringPrijs() { return getInsuranceFee() * engineCapacity; }
 
     // for this example we use system outs for the information and no frontend information getters
     @Override

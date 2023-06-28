@@ -13,9 +13,7 @@ public class Car extends Product {
         }
 
         @Override
-        public double berekenHuurPrijs() {
-                return 0.01 * getDailyRentalPrice();
-        }
+        public double berekenHuurPrijs() { return getDailyRentalPrice();}
         @Override
         public double berekenVerzekeringPrijs() {
                 return getInsuranceFee() * engineCapacity;
