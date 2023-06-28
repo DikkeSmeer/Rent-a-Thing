@@ -1,4 +1,4 @@
-package org.example;
+package org.rent_a_thing;
 
 public class Employee extends User implements Observer {
     private String role;

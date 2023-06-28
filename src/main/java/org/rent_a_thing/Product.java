@@ -1,4 +1,4 @@
-package org.example;
+package org.rent_a_thing;
 
 public abstract class Product {
     private String name;
@@ -34,5 +34,5 @@ public abstract class Product {
 
     public abstract double berekenHuurPrijs();
     public abstract double berekenVerzekeringPrijs();
-    public abstract void getProductDetails(); // ?
+    public abstract void getProductDetails();
 }

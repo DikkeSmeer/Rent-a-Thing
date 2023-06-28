@@ -1,4 +1,4 @@
-package org.example;
+package org.rent_a_thing;
 
 import java.util.ArrayList;
 

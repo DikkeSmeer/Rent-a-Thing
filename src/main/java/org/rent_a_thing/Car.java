@@ -1,4 +1,4 @@
-package org.example;
+package org.rent_a_thing;
 
 public class Car extends Product {
         private final String brand;

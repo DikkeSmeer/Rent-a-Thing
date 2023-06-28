@@ -1,4 +1,4 @@
-package org.example;
+package org.rent_a_thing;
 
 public class Truck extends Product {
     private final double loadCapacity;

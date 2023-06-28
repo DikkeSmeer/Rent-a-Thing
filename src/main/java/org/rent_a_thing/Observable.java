@@ -1,4 +1,4 @@
-package org.example;
+package org.rent_a_thing;
 
 public interface Observable {
     void registerObserver(Observer o);
